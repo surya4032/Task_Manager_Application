@@ -15,23 +15,17 @@ Prerequisites: Make sure you have Python 3 installed on your system. You can che
 Clone the Repository (Optional): If you want to contribute or modify the application, clone the repository using Git:
 
 ## Deployment
-
-You can access the deployed CLI application on PythonAnywhere [here](https://www.pythonanywhere.com/user/surya4032/consoles/36372046/).
-
-
-
-
 Navigate to the Directory: Use the cd command to navigate to the project directory:
 
 Bash
 cd task_manager
-Use code with caution.
+
 
 Run the Script: Execute the application using the following command:
 
 Bash
 python task_manager.py
-Use code with caution.
+
 
 Using the Application:
 
