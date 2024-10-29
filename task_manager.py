@@ -109,7 +109,7 @@ def mark_task_complete():
         try:
             tasks[task_id - 1].completed = True
             print("Task marked as completed!")
-            save_tasks(tasks)
+            save_tasks()
             time.sleep(3)
             return main_menu()
 
