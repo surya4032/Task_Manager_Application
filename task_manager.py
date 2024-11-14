@@ -69,7 +69,7 @@ def view_tasks():
     
 
 def delete_task():
-    """Prompts user for task ID and deletes it from the list."""
+    
     if len(tasks)==0:
             print("No tasks to delete please add a task")
             time.sleep(3)
@@ -81,12 +81,14 @@ def delete_task():
     print("Are you sure you want to delete!!")
     delete=input("please type yes to delete or type no to return to main menu")
     if delete =='yes' or delete=='YES':
+        """Prompts user for task ID and deletes it from the list."""
         task_id = int(input("Enter task ID to delete: "))
         for task in tasks:
             if task.id==task_id:
                 tasks.remove(task)
                 print("Deleting tasks...")
                 save_tasks()
+                return main_menu()
             else:
                 print("Enter valid Id")
                 time.sleep(3)
@@ -105,15 +107,21 @@ def mark_task_complete():
             return main_menu()
     else:
 
-        task_id = int(input("Enter task ID to mark complete: "))
+        
         try:
+            """Display all the tasks before marking them """
+            for task in tasks:
+                print(task)
+            task_id = int(input("Enter task ID to mark complete: "))
             for task in tasks:
                 if task.id==task_id:
                     task.completed=True
-                    print("Yo've completed your task")
+                    print("Task marked as completed!")
                     save_tasks()
                     time.sleep(3)
                     return main_menu()
+            
+           
 
         except IndexError:
             print("please enter valid task ID.")
