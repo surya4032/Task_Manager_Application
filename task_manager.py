@@ -107,11 +107,18 @@ def mark_task_complete():
 
         task_id = int(input("Enter task ID to mark complete: "))
         try:
-            tasks[task_id - 1].completed = True
-            print("Task marked as completed!")
-            save_tasks()
-            time.sleep(3)
-            return main_menu()
+            """Display all the tasks before marking them """
+            for task in tasks:
+                print(task)
+            for task in tasks:
+                if task.id==task_id:
+                    task.completed=True
+                    print("Task marked as completed!")
+                    save_tasks()
+                    time.sleep(3)
+                    return main_menu()
+            
+           
 
         except IndexError:
             print("please enter valid task ID.")
