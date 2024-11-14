@@ -69,7 +69,7 @@ def view_tasks():
     
 
 def delete_task():
-    """Prompts user for task ID and deletes it from the list."""
+    
     if len(tasks)==0:
             print("No tasks to delete please add a task")
             time.sleep(3)
@@ -81,6 +81,7 @@ def delete_task():
     print("Are you sure you want to delete!!")
     delete=input("please type yes to delete or type no to return to main menu")
     if delete =='yes' or delete=='YES':
+        """Prompts user for task ID and deletes it from the list."""
         task_id = int(input("Enter task ID to delete: "))
         for task in tasks:
             if task.id==task_id:
