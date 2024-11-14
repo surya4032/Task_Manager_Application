@@ -87,6 +87,7 @@ def delete_task():
                 tasks.remove(task)
                 print("Deleting tasks...")
                 save_tasks()
+                return main_menu()
             else:
                 print("Enter valid Id")
                 time.sleep(3)
@@ -105,11 +106,12 @@ def mark_task_complete():
             return main_menu()
     else:
 
-        task_id = int(input("Enter task ID to mark complete: "))
+        
         try:
             """Display all the tasks before marking them """
             for task in tasks:
                 print(task)
+            task_id = int(input("Enter task ID to mark complete: "))
             for task in tasks:
                 if task.id==task_id:
                     task.completed=True
